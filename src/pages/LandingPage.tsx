@@ -28,12 +28,14 @@ export default function LandingPage() {
         return;
       }
 
+      // Use URLSearchParams to avoid CORS preflight (Google Apps Script doesn't handle OPTIONS)
+      const params = new URLSearchParams();
+      params.append('name', formData.name);
+      params.append('email', formData.email);
+
       const response = await fetch(apiUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: params,
       });
 
       const result = await response.json();
