@@ -165,6 +165,7 @@ export default function LandingPage() {
           <h2 id="signup-heading" className="signup-title">
             Request Beta Access
           </h2>
+          <p className="signup-subtitle">Coming in 2026</p>
           <form onSubmit={handleSubmit} className="beta-form" noValidate>
             <div className="form-group">
               <label htmlFor="name" className="form-label">
